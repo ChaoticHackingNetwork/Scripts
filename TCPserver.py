@@ -1,5 +1,5 @@
 # This is a Basic TCP Server 
-# Note This Program is written in Python2.7 **
+# Note This is written in Python2.7 **
 
 import threading
 import socket
