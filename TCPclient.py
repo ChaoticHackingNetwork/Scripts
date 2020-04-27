@@ -1,5 +1,5 @@
 # This is a simple TCP Client
-# ** Note This Program is written in Python2.7 **
+# Note This is written in Python2.7 **
 
 import socket
 
