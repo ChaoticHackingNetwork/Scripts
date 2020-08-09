@@ -4,6 +4,7 @@
 #Visit "https://github.com/ChaoticHackingNetwork/BasicScripts" for more info
 echo "Chaotic_Guru's Arch Linux Install"
 echo "This will be over quickly X_X"
+
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
 if ! [ $connected = 'y' ] && ! [ $connected = 'Y' ]
@@ -26,7 +27,7 @@ fi
 
 #Create partitions thru fdisk...
 #https://superuser.com/a/984637
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk ${TGTDEV}
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
 	o # Clear the in-memory partition table
 	n # New partition
 	p # Primary partition
