@@ -79,3 +79,13 @@ pacman-key --refresh-keys
 
 #Install base system
 pacstrap /mnt base base-devel linux linux-headers vi vim nano
+
+#Generate fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+#Lets dig into your new system
+arch-chroot /mmt /bin/bash
+
+#Set time & clock
+timedatectl set-ntp true
+hwclock --systohc --utc
