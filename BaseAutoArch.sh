@@ -3,7 +3,7 @@
 #This is Chaotic_Guru's Arch Linux Scripted Install.
 #Visit "https://github.com/ChaoticHackingNetwork/BasicScripts" for more info
 echo "Chaotic_Guru's Arch Linux Install"
-
+echo "This will be over quickly X_X"
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
 if ! [ $connected = 'y' ] && ! [ $connected = 'Y' ]
