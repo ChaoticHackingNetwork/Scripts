@@ -2,7 +2,6 @@
 
 #This is Chaotic_Guru's Arch Linux Scripted Install.
 #Visit "https://github.com/ChaoticHackingNetwork/BasicScripts" for more info
-
 echo "Chaotic_Guru's Arch Linux Install"
 
 #Network Connections
