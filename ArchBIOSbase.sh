@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#This is Chaotic_Guru's Arch Linux Scripted Install.
+#This is ChaoticGuru's Arch Linux Scripted Install.
 #Visit "https://github.com/ChaoticHackingNetwork/BasicScripts" for more info
 #This is for BIOS systems...
 
-echo "Chaotic_Guru's Arch Linux Install"
+echo "ChaoticGuru's Arch Linux BIOS Install"
 
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
