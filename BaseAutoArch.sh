@@ -65,6 +65,7 @@ mount /dev/sda1 /mnt/boot/EFI
 #Display new tables and confirm
 lsblk
 echo "Are the mount points labled and correct?"
+echo "/dev/sda1 will be mounted on the chrootInstall"
 read -p 'Continue? [Y/n]' confirm
 if ! [ $confirm = 'y' ] && ! [ $confirm = 'Y' ]
 then 
