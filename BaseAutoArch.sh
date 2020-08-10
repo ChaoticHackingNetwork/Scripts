@@ -86,8 +86,4 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 echo "We will now chroot into our new system...
 echo "*** Ensure you download the chrootInstall.sh from https://raw.githubusercontent.com/ChaoticHackingNetwork ***"
-
-#Lets dig into your new system
-arch-chroot /mmt /bin/bash
-echo "Run ./chrootInstall.sh to finish the setup"
-
+echo "Run the command: arch-chroot /mnt and then install the chrootInstall script"
