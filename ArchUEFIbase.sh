@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#This is Chaotic_Guru's Arch Linux Scripted Install.
+#This is ChaoticGuru's Arch Linux Scripted Install.
 #Visit "https://github.com/ChaoticHackingNetwork/BasicScripts" for more info
-echo "Chaotic_Guru's Arch Linux Install"
+echo "ChaoticGuru's Arch Linux UEFI Install"
 echo "This will be over quickly X_X"
 
 #Network Connections
@@ -84,8 +84,9 @@ pacstrap /mnt base base-devel linux linux-firmware vi vim nano
 #Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
-echo "We will now chroot into our new system..."
+echo "You will now chroot into your new system : arch-chroot /mnt"
 echo "*** Ensure you download the chrootInstall.sh from https://raw.githubusercontent.com/ChaoticHackingNetwork ***"
+echo "You can use wget or curl or whatever your prefer"
 echo "Run the command: arch-chroot /mnt and then install the chrootInstall script"
 
 exit
