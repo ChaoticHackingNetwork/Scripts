@@ -8,3 +8,6 @@ Drop your unpolished or polished scripts here!
 
 (TCPproxy.py) = a Basic TCP proxy that allows forwarding traffic to bounce from host to host. 
  
+(ArchUEFIbase.sh) = A Basic Arch Linux install script for UEFI systems
+
+(ArchBIOSbase.sh) = A Basic Arch Linux install script for BIOS systems
