@@ -84,7 +84,7 @@ pacstrap /mnt base base-devel linux linux-firmware vi vim nano
 #Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
-echo "We will now chroot into our new system...
+echo "We will now chroot into our new system..."
 echo "*** Ensure you download the chrootInstall.sh from https://raw.githubusercontent.com/ChaoticHackingNetwork ***"
 echo "Run the command: arch-chroot /mnt and then install the chrootInstall script"
 
