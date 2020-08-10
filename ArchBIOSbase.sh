@@ -60,7 +60,6 @@ swapon /dev/sda2
 
 #Mount partitions
 mount /dev/sda3 /mnt
-mkdir /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/
 
 #Display new tables and confirm
