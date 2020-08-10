@@ -78,46 +78,15 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 
 #Install base system
-pacstrap /mnt base base-devel linux linux-headers vi vim nano
+pacstrap /mnt base base-devel linux linux-firmware vi vim nano
 
 #Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
+echo "We will now chroot into our new system...
+echo "*** Ensure you download the chrootInstall.sh from https://raw.githubusercontent.com/ChaoticHackingNetwork ***"
+
 #Lets dig into your new system
 arch-chroot /mmt /bin/bash
+echo "Run ./chrootInstall.sh to finish the setup"
 
-#Set time & clock
-timedatectl set-ntp true
-hwclock --systohc --utc
-
-#Change localtime *Note this script has it set too Chicago*
-ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
-
-# Set locale to en_US.UTF-8 UTF-8
-sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
-locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-
-#Install some needed packages
-pacman -Syyu
-pacman -S net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo python3 python2 git wget curl --noconfirm
-
-#Set root password
-passwd
-
-#Create a new user
-echo -n "Enter a new Username: "
-read Username
-adduser -mg users -G wheel,power,storage,uucp,network -s /bin /bash '$Username'
-echo "Please set your password now!"
-passwd '$Username'
-
-#Install bootloader
-pacman -S grub efibootmgr dosfstools mtools os-prober --noconfirm
-mkdir /boot/EFI
-mount /dev/sda1 /boot/EFI
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=arch --recheck
-grub-mkconfig -o /boot/grub/grub.cfg
-
-#one last check for updates
-pacman -Syyu
