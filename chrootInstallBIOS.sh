@@ -26,7 +26,7 @@ passwd
 #Create a new user
 echo -n "Enter a new Username: "
 read Username
-adduser -mg users -G wheel,power,storage,uucp,network -s /bin /bash '$Username'
+useradd -mg users -G wheel,power,storage,uucp,network -s /bin /bash '$Username'
 echo "Please set your password now!"
 passwd '$Username'
 
