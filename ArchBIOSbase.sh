@@ -85,6 +85,7 @@ pacstrap /mnt base base-devel linux linux-headers vi vim nano
 genfstab -U -p /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
+echo 0 > /proc/sys/kernel/hung_task_timeout_secs
 echo "You will now chroot into your new system : arch-chroot /mnt"
 echo "*** Ensure you download the chrootInstall.sh from https://raw.githubusercontent.com/ChaoticHackingNetwork ***"
 echo "You can use wget or curl or whatever your prefer"
