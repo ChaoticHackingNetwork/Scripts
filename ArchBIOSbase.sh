@@ -36,34 +36,28 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda # CHANGE THIS IF 
 	n # New partition
 	p # Primary partition
 	1 # First partition
-		# default - start at beginning of disk
-	+512M # 512 MB Boot partition
+		# SWAP - start at beginning of disk
+	+16G # swap space
 	n 
 	p
 	2
-		# default, start immediately after preceding partition
-	+16G # swap space
-	n
-	p
-	3
-		# default, start immediately after preceding partition
+		# ROOT, start immediately after preceding partition
 		# default, use rest of disk space
 	p # print the in-memory table
 	w # write changes to disk
 	q # quit
+		
 EOF
 
 #Format partitions
-mkfs.ext4 /dev/sda3
-mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
 
 #Mount partitions
-mount /dev/sda1 /mnt/boot
-mount /dev/sda3 /mnt
+mount /dev/sda2 /mnt
 
 #Create swap space
-mkswap /dev/sda2
-swapon /dev/sda2
+mkswap /dev/sda1
+swapon /dev/sda1
 
 #Display new tables and confirm
 lsblk
