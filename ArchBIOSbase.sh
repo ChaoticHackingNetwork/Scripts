@@ -79,7 +79,7 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 
 #Install base system
-pacstrap /mnt base base-devel linux linux-headers vi vim nano
+pacstrap /mnt base base-devel linux linux-firmware vi vim nano
 
 #Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
