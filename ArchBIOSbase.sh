@@ -17,9 +17,9 @@ fi
 #Mounting the File System Warning!
 echo "This script will create and format the following partitions:"
 echo
-echo "	/dev/sda1 - 512M will be mounted as /boot"
-echo "	/dev/sda2 - 16G will be used as SWAP"
-echo "	/dev/sda3 - rest of space will be /mnt(root)"
+echo "--------- /dev/sda1 - 512M will be mounted as /boot ------------"
+echo "--------- /dev/sda2 - 16G will be used as SWAP space -----------"
+echo "--------- /dev/sda3 - rest of space will be /mnt(root) ---------"
 read -p 'Continue? [y/N]: ' partition
 if ! [ $partition = 'y' ] && ! [ $partition = 'Y' ]
 then
