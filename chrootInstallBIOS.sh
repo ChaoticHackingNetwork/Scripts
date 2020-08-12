@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Chroot Install - ChaoticGuru
+#Chroot Install
 #Quick installation of key components 
 
 #Set time & clock
@@ -17,7 +17,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo python3 python2 git wget curl grub efibootmgr dosfstools mtools os-prober reflector --noconfirm
+pacman -S net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo python3 python2 git wget curl grub os-prober reflector --noconfirm
 
 #Set root password
 echo "Please set ROOT password!!!"
@@ -26,9 +26,9 @@ passwd
 #Create a new user
 echo -n "Enter a new Username: "
 read username
-useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash $username
+useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash '$username'
 echo "Please set your password now!"
-passwd $username
+passwd '$username'
 
 #Install bootloader
 grub-install --target=i386-pc /dev/sda --recheck
