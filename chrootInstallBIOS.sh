@@ -36,6 +36,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #Successfully Installed
 echo "Arch Linux UEFI base has been successfully installed on your system..."
-echo "A reboot will now take place"
+echo "A reboot should now take place"
+echo "Run the following commands to reboot properly!"
+echo
+echo "  [1]: exit "
+echo "  [2]: umount -a "
+echo "  [3]: telinit 6 "
 
 exit
