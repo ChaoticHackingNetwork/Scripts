@@ -42,7 +42,7 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda # CHANGE THIS IF 
 	p
 	2
 		# default, start immediately after preceding partition
-	+16GB # swap space
+	+16G # swap space
 	n
 	p
 	3
