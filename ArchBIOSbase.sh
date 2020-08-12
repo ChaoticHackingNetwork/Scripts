@@ -20,6 +20,8 @@ echo
 echo "--------- /dev/sda1 - 512M will be mounted as /boot ------------"
 echo "--------- /dev/sda2 - 16G will be used as SWAP space -----------"
 echo "--------- /dev/sda3 - rest of space will be /mnt(root) ---------"
+echo
+echo
 read -p 'Continue? [y/N]: ' partition
 if ! [ $partition = 'y' ] && ! [ $partition = 'Y' ]
 then
