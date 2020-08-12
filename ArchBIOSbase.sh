@@ -58,8 +58,8 @@ mkfs.ext4 /dev/sda3
 mkfs.ext4 /dev/sda1
 
 #Mount partitions
-mount /dev/sda3 /mnt/boot
-mount /dev/sda1 /mnt
+mount /dev/sda1 /mnt/boot
+mount /dev/sda3 /mnt
 
 #Create swap space
 mkswap /dev/sda2
