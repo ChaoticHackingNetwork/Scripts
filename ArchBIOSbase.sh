@@ -86,10 +86,10 @@ echo 0 > /proc/sys/kernel/hung_task_timeout_secs
 wget https://raw.githubusercontent.com/ChaoticHackingNetwork/BasicScripts/master/chrootInstallBIOS.sh
 mv chrootInstallBIOS.sh /mnt
 echo "The next script (chrootInstallBIOS.sh) has been moved to your new root directory..."
-echo "Run the following commands to finish setup...
+echo "Run the following commands to finish setup..."
 echo 
 echo "	[1] arch-chroot /mnt /bin/bash"
 echo "	[2] chmod +x chrootInstallBIOS.sh"
-echo "  [3] ./chrootInstallBIOS.sh
+echo "  [3] ./chrootInstallBIOS.sh"
 
 exit
