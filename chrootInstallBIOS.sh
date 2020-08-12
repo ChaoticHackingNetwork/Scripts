@@ -24,11 +24,11 @@ echo "Please set ROOT password!!!"
 passwd
 
 #Create a new user
-echo -n "Enter a new Username: "
-read Username
-useradd -mg users -G wheel,power,storage,uucp,network -s /bin /bash '$Username'
+username = echo -n "Enter a new Username: "
+read username
+useradd -mg users -G wheel,power,storage,uucp,network -s /bin /bash $username
 echo "Please set your password now!"
-passwd '$Username'
+passwd $username
 
 #Install bootloader
 grub-install --target=i386-pc /dev/sda1 --recheck
