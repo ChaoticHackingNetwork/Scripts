@@ -41,7 +41,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #Successfully Installed
 neofetch
-echo "Arch Linux UEFI base has been successfully installed on your system..."
+echo "Arch Linux BIOS base has been successfully installed on your system..."
 echo "A reboot should now take place"
 echo "Run the following commands to reboot properly!"
 echo
