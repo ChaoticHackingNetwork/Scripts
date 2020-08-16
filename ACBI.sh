@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Arch Chroot BIOS Install (ACBI)
-# --------------------------------
-# Author    : ChaoticGuru
-# Github    : https://github.com/Chaotic-Lab
-#             https://github.com/ChaoticHackingNetwork
-# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork)
+# ---------------------------------------------------------------
+# Author    : ChaoticGuru                                        |
+# Github    : https://github.com/Chaotic-Lab                     |
+#	            https://github.com/ChaoticHackingNetwork           |
+# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork) |
+# ---------------------------------------------------------------
 
 # Set locale to en_US.UTF-8 UTF-8
 sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
