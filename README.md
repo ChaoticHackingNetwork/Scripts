@@ -8,4 +8,8 @@ Drop your unpolished or polished scripts here!
 
 (TCPproxy.py) = a Basic TCP proxy that allows forwarding traffic to bounce from host to host. 
 
+(ABI & ACBI) = A 'really' basic script install for Arch Linux BIOS systems
+
+(AUI & ACUI) = A 'really' basic script install for Arch Linux UEFI systems.
+
 
