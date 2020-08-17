@@ -35,6 +35,10 @@ useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash $username
 echo "Please set your password now!"
 passwd $username
 
+#Install MATE Desktop env and LightDM after reboot
+pacman -S mate mate-extra mate-utils lightdm-gkt-greeter
+systemctl enable lightdm-gtk-greeter
+
 #Install bootloader
 grub-install --target=i386-pc /dev/sda --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
