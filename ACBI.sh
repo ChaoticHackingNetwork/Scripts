@@ -36,7 +36,7 @@ echo "Please set your password now!"
 passwd $username
 
 #Install MATE Desktop env and LightDM after reboot
-pacman -S mate mate-extra mate-utils lightdm-gtk-greeter
+pacman -S mate mate-extra mate-utils lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm-gtk-greeter
 
 #Install bootloader
