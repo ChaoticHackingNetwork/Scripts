@@ -22,7 +22,7 @@ ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime #CHANGE THIS TO YOUR T
 
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip --noconfirm
+pacman -S net-tools dhcpcd mlocate dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
 
 #Set root password
 echo "Please set ROOT password!!!"
@@ -34,9 +34,15 @@ echo "Welcome to your new system $username!"
 useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash $username
 echo "Please set your password now!"
 passwd $username
+perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
+
+#Install MATE Desktop env and LightDM
+pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm lightdm-gtk-greeter --noconfirm
+systemctl enable lightdm
 
 #Install bootloader
-grub-install --target=i386-pc /dev/sda --recheck
+mkdir /boot/EFI
+grub-install --target=x86_64-efi --bootloader-id=ARCH_UEFI /dev/sda --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #Successfully Installed
