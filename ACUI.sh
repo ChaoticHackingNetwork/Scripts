@@ -46,6 +46,11 @@ mount /dev/sda1 /boot/EFI
 grub-install --target=x86_64-efi --bootloader-id=ARCH_UEFI /dev/sda --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#Install BlackArch Mirror
+wget https://blackarch.org/strap.sh
+chmod +x strap.sh
+./strap.sh
+
 #Successfully Installed
 neofetch
 echo "Arch Linux UEFI base has been successfully installed on your system..."
