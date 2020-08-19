@@ -7,7 +7,10 @@
 #	      https://github.com/ChaoticHackingNetwork           |
 # Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork) |
 # ---------------------------------------------------------------
-
+echo""             
+echo"  /\    |\   |---  |   |    |     |  |\ |  |   |  \  /"
+echo" /  \   | \  |     |---|    |     |  | \|  |   |   \/ "
+echo"/    \  |    |---  |   |    |___  |  |  \  |___|  /  \"
 echo -e "\033[33;36mChaotic_Guru's Arch Linux BIOS Install\033[0m"
 
 #Network Connections
@@ -20,11 +23,12 @@ fi
 
 #Mounting the File System Warning!
 echo "This script will create and format the following partitions:"
-echo
+echo ""
 echo "--------- /dev/sda1 - 16G will be mounted as SWAP space ------------"
 echo "--------- /dev/sda2 - Rest of space will be mounted as / -----------"
+echo ""
 echo "Exit now if this is not correct!!!"
-echo
+echo ""
 read -p 'Continue? [y/N]: ' partition
 if ! [ $partition = 'y' ] && ! [ $partition = 'Y' ]
 then
