@@ -69,7 +69,7 @@ swapon /dev/sda1
 
 #Display new tables and confirm
 lsblk
-echo "Are the mount points correct?"
+echo "Mount points correct?"
 read -p 'Continue? [Y/n]' confirm
 if ! [ $confirm = 'y' ] && ! [ $confirm = 'Y' ]
 then 
