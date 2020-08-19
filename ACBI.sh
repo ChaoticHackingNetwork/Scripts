@@ -41,7 +41,7 @@ echo "Please set your password now!"
 passwd $username
 
 #Install MATE Desktop env and LightDM after reboot
-pacman -S mate mate-extra mate-utils lightdm-gtk-greeter --noconfirm
+pacman -S mate mate-extra mate-utils lightdm lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm-gtk-greeter
 
 #Install bootloader
@@ -56,6 +56,6 @@ echo "Run the following commands to reboot properly!"
 echo
 echo "  [1]: exit "
 echo "  [2]: umount -a "
-echo "  [3]: telinit 6 "
+echo "  [3]: reboot "
 
 exit 
