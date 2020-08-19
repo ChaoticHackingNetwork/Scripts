@@ -17,12 +17,17 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 timedatectl set-ntp true
 hwclock --systohc --utc
 
+#Initialize Pacman
+pacman-key --init
+pacman-key --populate archlinux
+pacman-key --refresh-keys
+
 #Change localtime *Note this script has it set too Chicago*
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime #CHANGE THIS TO YOUR TIMEZONE
 
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo man-db usbutils vlc firefox gedit gedit-plugins flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip --noconfirm
+pacman -S archlinux-keyring net-tools dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo man-db usbutils vlc firefox gedit gedit-plugins flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip --noconfirm
 
 #Set root password
 echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
@@ -36,7 +41,7 @@ echo "Please set your password now!"
 passwd $username
 
 #Install MATE Desktop env and LightDM after reboot
-pacman -S archlinux-keyring mate mate-extra mate-utils lightdm-gtk-greeter --noconfirm
+pacman -S mate mate-extra mate-utils lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm-gtk-greeter
 
 #Install bootloader
