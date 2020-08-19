@@ -72,11 +72,6 @@ then
 	exit
 fi
 
-#Initialize Pacman
-#pacman-key --init
-#pacman-key --populate archlinux
-#pacman-key --refresh-keys
-
 #Install base system
 pacstrap /mnt base base-devel linux linux-firmware
 
