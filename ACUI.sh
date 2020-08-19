@@ -22,7 +22,7 @@ ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime #CHANGE THIS TO YOUR T
 
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
+pacman -S net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
 
 #Set root password
 echo "Please set ROOT password!!!"
