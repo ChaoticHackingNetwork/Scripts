@@ -41,7 +41,7 @@ echo "Please set your password now!"
 passwd $username
 
 #Install MATE Desktop env and LightDM after reboot
-pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm --noconfirm
+pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm
 
 #Install bootloader
