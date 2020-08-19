@@ -20,6 +20,7 @@ fi
 
 #Mounting the File System Warning!
 echo "This script will create and format the following partitions:"
+echo "If your system will not be on /dev/sda please change line#40 to your device"
 echo
 echo "--------- /dev/sda1 - 512M will be mounted as /boot/EFI ------------"
 echo "--------- /dev/sda2 - 16G of space will be mounted as SWAP ---------"
@@ -73,17 +74,13 @@ swapon /dev/sda2
 #Display new tables and confirm
 lsblk
 echo "/dev/sda1 - /boot/EFI will be mounted in the next script"
-echo "Are the mount points correct?"
+echo "Mount points correct?"
 read -p 'Continue? [Y/n]' confirm
 if ! [ $confirm = 'y' ] && ! [ $confirm = 'Y' ]
 then 
 	echo "Please edit the script to continue..."
 	exit
 fi
-
-#Initialize Pacman
-pacman-key --init
-pacman-key --populate archlinux
 
 #Install base system
 pacstrap /mnt base base-devel linux linux-firmware
