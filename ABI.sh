@@ -73,8 +73,8 @@ then
 fi
 
 #Initialize Pacman
-pacman-key --init
-pacman-key --populate archlinux
+#pacman-key --init
+#pacman-key --populate archlinux
 #pacman-key --refresh-keys
 
 #Install base system
