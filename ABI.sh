@@ -9,10 +9,10 @@
 # ---------------------------------------------------------------
 
 echo -e "\033[33;36mChaotic_Guru's Arch Linux BIOS Install\033[0m"
-echo             
-read "'  /\    |\   |---  |   |    |     |  |\ |  |   |  \  / "
-read "' /  \   | \  |     |---|    |     |  | \|  |   |   \/  "
-read "'/    \  |    |---  |   |    |___  |  |  \  |___|  /  \ "
+#echo             
+#read "  /\    |\   |---  |   |    |     |  |\ |  |   |  \  / "
+#read " /  \   | \  |     |---|    |     |  | \|  |   |   \/  "
+#read "/    \  |    |---  |   |    |___  |  |  \  |___|  /  \ "
 
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
