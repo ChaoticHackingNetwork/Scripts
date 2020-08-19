@@ -42,6 +42,7 @@ systemctl enable lightdm
 
 #Install bootloader
 mkdir /boot/EFI
+mount /dev/sda1 /boot/EFI
 grub-install --target=x86_64-efi --bootloader-id=ARCH_UEFI /dev/sda --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
