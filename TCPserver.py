@@ -1,5 +1,3 @@
-
-
 # This is a Basic TCP Server
 # Updated to Python3
 
