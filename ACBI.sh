@@ -53,6 +53,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 wget https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
+pacman -Syyu
 
 #Successfully Installed
 neofetch
