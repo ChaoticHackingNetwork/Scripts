@@ -86,7 +86,7 @@ fi
 pacstrap /mnt base base-devel linux linux-firmware
 
 #Generate fstab
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
 #Finish last minute setup
