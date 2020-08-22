@@ -27,7 +27,7 @@ pacman-key --populate archlinux
 
 #Install some needed packages
 pacman -Syyu
-pacman -S vi vim nano archlinux-keyring pacman-contrib vi vim nano net-tools perl go ruby dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo man-db usbutils vlc firefox chromium gedit gedit-plugins flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip alsa-utils alsa dosfstools mtools efibootmgr libguestfs --noconfirm
+pacman -S vi vim nano archlinux-keyring pacman-contrib vi vim nano net-tools perl go ruby dhcpcd mlocate dnsutils zip ntfs-3g dialog wpa_supplicant sudo man-db usbutils vlc firefox chromium gedit gedit-plugins flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip alsa-utils alsa dosfstools mtools efibootmgr libguestfs xf86-video --noconfirm
 
 #Set root password
 echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
@@ -42,7 +42,7 @@ passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
 #Install MATE Desktop env and LightDM
-pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm lightdm-gtk-greeter --noconfirm
+pacman -S xorg xorg-xinit xorg-server lightdm xorg-xrandr --noconfirm
 systemctl enable lightdm
 
 #Install bootloader
