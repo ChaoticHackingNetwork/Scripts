@@ -30,14 +30,14 @@ pacman -Syyu
 pacman -S net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox chromium gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
 
 #Set root password
-echo "Please set ROOT password!!!"
+echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
 passwd
 
 #Create a new user
 read -p "Enter a new Username: " username
 echo "Welcome to your new system $username!"
 useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash $username
-echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
+echo -e "\033[33;36mPlease set your password now!!!\033[0m"
 passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
