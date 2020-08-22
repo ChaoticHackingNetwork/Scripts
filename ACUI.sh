@@ -27,7 +27,7 @@ pacman-key --populate archlinux
 
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox chromium gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
+pacman -S vi vim nano net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox chromium gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
 
 #Set root password
 echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
