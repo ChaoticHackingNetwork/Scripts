@@ -32,7 +32,7 @@ passwd
 read -p "Enter a new Username: " username
 echo "Welcome to your new system $username!"
 useradd -mg users -G wheel,power,storage,uucp,network -s /bin/bash $username
-echo "Please set your password now!"
+echo -e "\033[33;36mPlease set ROOT password!!!\033[0m"
 passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
