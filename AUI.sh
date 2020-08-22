@@ -99,5 +99,9 @@ echo
 echo "	[1] arch-chroot /mnt /bin/bash"
 echo "	[2] chmod +x ACUI.sh"
 echo "  [3] ./ACUI.sh"
+echo
+echo "TAKE NOTE! Sometimes a bad meterpreter is shown when executing ./ACUI.sh"
+echo "If that is the case, execute this command:"
+echo "sed -i -e 's/\r$//' ACUI.sh"
 
 exit
