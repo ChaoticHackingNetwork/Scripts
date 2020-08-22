@@ -37,7 +37,7 @@ passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
 #Install MATE Desktop env and LightDM
-pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm --noconfirm
+pacman -S xorg xorg-server xorg-xrandr mate lightdm --noconfirm
 systemctl enable lightdm
 
 #Install bootloader
