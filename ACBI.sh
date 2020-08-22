@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 # Author    : Chaotic_Guru                                       |
 # Github    : https://github.com/Chaotic-Lab                     |
-#	            https://github.com/ChaoticHackingNetwork           |
+#	Github    : https://github.com/ChaoticHackingNetwork           |
 # Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork) |
 # ---------------------------------------------------------------
 
