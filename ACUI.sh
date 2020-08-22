@@ -20,9 +20,14 @@ hwclock --systohc --utc
 #Change localtime *Note this script has it set too Chicago*
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime #CHANGE THIS TO YOUR TIMEZONE
 
+#Initialize Pacman
+pacman-key --init
+pacman-key --populate archlinux
+#pacman-key --refresh-keys
+
 #Install some needed packages
 pacman -Syyu
-pacman -S net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
+pacman -S net-tools dhcpcd mlocate perl go ruby dnsutils usbutils zip ntfs-3g dialog wpa_supplicant sudo man-db vlc firefox chromium gedit flashplugin aria2 python3 python2 git wget curl grub netctl neofetch os-prober reflector rsync tar p7zip dosfstools mtools efibootmgr --noconfirm
 
 #Set root password
 echo "Please set ROOT password!!!"
@@ -37,7 +42,7 @@ passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
 #Install MATE Desktop env and LightDM
-pacman -S xorg xorg-server xorg-xrandr mate lightdm --noconfirm
+pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm
 
 #Install bootloader
