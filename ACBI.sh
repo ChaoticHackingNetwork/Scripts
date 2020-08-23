@@ -42,7 +42,7 @@ passwd $username
 perl -i -pe 's/# (%wheel ALL=\(ALL\) ALL)/$1/' /etc/sudoers
 
 #Install MATE Desktop env and LightDM after reboot
-pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm --noconfirm
+pacman -S xorg xorg-server xorg-xrandr mate mate-extra lightdm xorg-xinit --noconfirm
 systemctl enable lightdm
 
 #Install bootloader
@@ -53,7 +53,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 wget https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
-pacman -Syyu
+pacman -Syyu --noconfirm
 
 #Successfully Installed
 neofetch
