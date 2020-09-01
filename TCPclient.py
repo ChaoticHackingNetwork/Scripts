@@ -6,7 +6,7 @@ HEADER = 64
 PORT = 7675
 SERVER = "172.16.1.40" #CHANGE THIS
 FORMAT = 'utf-8'
-DISCONNECT_MSG = "Uh-Oh we lost one !DISCONNECTED"
+DISCONNECT_MSG = "Uh-oh we lost one !DISCONNECTED"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
