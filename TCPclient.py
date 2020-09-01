@@ -1,24 +1,31 @@
-# This is a simple TCP Client
-# Updated to Python3
+#!/usr/bin/env python3
 
 import socket
 
-target_host = "0.0.0.0" # or hostname
-target_port = 8000
+HEADER = 64
+PORT = 7675
+SERVER = "172.16.1.40" #CHANGE THIS
+FORMAT = 'utf-8'
+DISCONNECT_MSG = "Uh-Oh we lost one !DISCONNECTED"
+ADDR = (SERVER, PORT)
 
-# Socket Object
-# AF_INET parameter is Standard IPv4 Address
-# SOCK_STREAM is indicating that this is a TCP Client
-# SOCK_DGRAM is UDP
-client =  socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(ADDR)
 
-# Connect the Client
-client.connect((target_host, target_port))
+def send(msg):
+    message = msg.encode(FORMAT)
+    msg_length = len(message)
+    send_length = str(msg_length).encode(FORMAT)
+    send_length += b' ' * (HEADER - len(send_length))
+    client.send(send_length)
+    client.send(message)
+    print(client.recv(4096).decode(FORMAT)
 
-# Sending Data
-client.send("GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
+send("Test! Test! Test!")
+input()
+send("Test! Test!")
+input()
+send("Test!")
 
-# Recieve Data
-data = client.recv(4096)
-print(data)
+send(DISCONNECT_MSG)
 
