@@ -1,41 +1,49 @@
-# This is a Basic TCP Server
-# Updated to Python3
+#!/usr/bin/env python3
 
-import threading
 import socket
+import threading
 
-# Specifify IP & Port we want Server to listen on
-bind_ip = "0.0.0.0"
-bind_port = 8000
+
+HEADER = 64
+PORT = 7675
+SERVER = "172.16.1.40" #CHANGE THIS OR UNCOMMENT THE NEXT LINE
+#SERVER = socket.gethostbyname(socket.gethostname())
+SPORT = (SERVER, PORT)
+FORMAT = 'utf-8'
+DISCONNECT_MSG = "Uh-oh We lost one !DISCONNECTED"
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(SPORT)
 
-server.bind((bind_ip, bind_port))
+def handle_client(conn, addr):
+    print(f"[NEW CONNECTION] {addr} connected.")
 
-# Tell the server to listen with a Maximum backlog of connections set to 2
-server.listen(2)
+    connected = True
+    while connected:
+        msg_length = conn.recv(HEADER).decode(FORMAT)
+        if msg_length:
+            msg_length = int(msg_length)
+            msg = conn.recv(msg_length).decode(FORMAT)
+            if msg == DISCONNECT_MSG:
+                connected = False
 
-print("[*] Listening on %s%d" % (bind_ip, bind_port))
+            print(f"[{addr}] {msg}")
+            conn.send("MSG received!".encode(FORMAT))
 
-# Client-Handling Thread
-def handle_client(client_socket):
 
-         # Print what the client sends
-         request = client_socket.recv(1024)
-         print("[*] Recieved: %s" % request)
+    conn.close()
 
-         # Send back a packet
-         client_socket.send("ACK!")
 
-         client_socket.close()
 
-# Put Server ino main loop, Awaiting incoming connections!
-while True:
+def start():
+    server.listen(5)
+    print(f"\33[92m[LISTENING]\033[0m Server is listening on {SERVER}")
+    while True:
+        conn, addr = server.accept()
+        thread = threading.Thread(target=handle_client, args=(conn, addr))
+        thread.start()
+        print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
 
-        client,addr = server.accept()
+print("\33[92m[OK]\033[0m Server is starting...")
+start()
 
-        print("[*] Accepted connection via %s%d" % (addr[0],addr[1]))
-
-        # Spin up our Client Thread to handle incoming Data!
-        client_handler = threading.Thread(target=handle_client,args=(client,))
-        client_handler.start()
