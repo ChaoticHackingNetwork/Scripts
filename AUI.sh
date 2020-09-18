@@ -91,7 +91,7 @@ cat /mnt/etc/fstab
 
 #Finish last minute setup
 echo 0 > /proc/sys/kernel/hung_task_timeout_secs
-wget https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/ACUI.sh
+curl -O https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/ACUI.sh
 mv ACUI.sh /mnt
 echo "The next script (ACBI.sh) has been moved to your new root directory..."
 echo "Run the following commands to finish setup..."
