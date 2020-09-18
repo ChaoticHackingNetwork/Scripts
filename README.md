@@ -12,7 +12,7 @@ ABI & ACBI = A 'really' basic script install for Arch Linux BIOS systems
   To install, boot into Arch live ISO and:
   
   
-    1. wget https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/ABI.sh
+    1. curl -O https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/ABI.sh
     2. chmod +x ABI.sh
     3. ./ABI.sh
     * Some systems show a bad meterpreter if so run: sed -i -e 's/\r$//' ABI.sh 
@@ -21,7 +21,7 @@ AUI & ACUI = A 'really' basic script install for Arch Linux UEFI systems.
     To install, boot into Arch live ISO and:
     
     
-    1. wget https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/AUI.sh
+    1. curl -O https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/AUI.sh
     2. chmod +x AUI.sh
     3. ./AUI.sh
     * Some systems show a bad meterpreter if so run: sed -i -e 's/\r$//' AUI.sh 
