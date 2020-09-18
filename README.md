@@ -1,4 +1,4 @@
-# A random collection of Scripts dealing with Hacking, Linux and everything in-between!
+# A random collection of scripts dealing with Hacking, Linux and everything in-between!
 
 
 
