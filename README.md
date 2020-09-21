@@ -1,5 +1,14 @@
 # A random collection of scripts dealing with Hacking, Linux and everything in-between!
 
+   ******  **      ** ****     **
+  **////**/**     /**/**/**   /**
+ **    // /**     /**/**//**  /**
+/**       /**********/** //** /**
+/**       /**//////**/**  //**/**
+//**    **/**     /**/**   //****
+ //****** /**     /**/**    //***
+  //////  //      // //      /// 
+
 
 
 TCPclient.py = a Basic TCP Client that can allow you to test for services, send data, fuzz and many other tasks.
