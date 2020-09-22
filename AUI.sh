@@ -9,6 +9,16 @@
 # ---------------------------------------------------------------
 
 echo -e "\033[33;36mChaoticGuru's Arch Linux UEFI Installer!!!\033[0m"
+echo.
+echo "     **                    **        **       **                     		"    
+echo "    ****                  /**       /**      //                           "
+echo "   **//**   ******  ***** /**       /**       ** *******  **   ** **   ** "
+echo "  **  //** //**//* **///**/******   /**      /**//**///**/**  /**//** **  " 
+echo " ********** /** / /**  // /**///**  /**      /** /**  /**/**  /** //***   "
+echo "/**//////** /**   /**   **/**  /**  /**      /** /**  /**/**  /**  **/**  "
+echo "/**     /**/***   //***** /**  /**  /********/** ***  /**//****** ** //** "
+echo "//      // ///     /////  //   //   //////// // ///   //  ////// //   //  "
+
 
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
@@ -21,13 +31,13 @@ fi
 #Mounting the File System Warning!
 echo "This script will create and format the following partitions:"
 echo "If your system will not be on /dev/sda please change line#40 to your device"
-echo
+echo.
 echo "--------- /dev/sda1 - 512M will be mounted as /boot/EFI ------------"
 echo "--------- /dev/sda2 - 16G of space will be mounted as SWAP ---------"
 echo "--------- /dev/sda3 - rest of space will be mounted as / -----------"
-echo
+echo.
 echo "Exit now if this is not correct!!!"
-echo
+echo.
 read -p 'Continue? [y/N]: ' partition
 if ! [ $partition = 'y' ] && ! [ $partition = 'Y' ]
 then
